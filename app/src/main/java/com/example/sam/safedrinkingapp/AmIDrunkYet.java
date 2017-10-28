@@ -23,6 +23,8 @@ import android.view.ViewGroup;
 import android.widget.Chronometer;
 import android.widget.TextView;
 
+import java.text.SimpleDateFormat;
+
 public class AmIDrunkYet extends AppCompatActivity {
 
     /**
@@ -57,6 +59,7 @@ public class AmIDrunkYet extends AppCompatActivity {
         mViewPager = (ViewPager) findViewById(R.id.container);
         mViewPager.setAdapter(mSectionsPagerAdapter);
         final GlobalVars gv = (GlobalVars) getApplicationContext();
+
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
