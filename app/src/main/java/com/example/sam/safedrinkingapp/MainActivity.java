@@ -33,13 +33,17 @@ public class MainActivity extends AppCompatActivity {
                 final GlobalVars gv = (GlobalVars) getApplicationContext();
                 EditText weightText = (EditText) findViewById(R.id.Weight);
                 gv.setWeight(Integer.valueOf(String.valueOf(weightText.getText())));
-                EditText heightText = (EditText) findViewById(R.id.Height);
-                gv.setHeight(Integer.valueOf(String.valueOf(heightText.getText())));
+                NumberPicker timePick = (NumberPicker) findViewById(R.id.numberPicker);
+                gv.setTime(timePick.getValue());
                 RadioGroup sexgroup = (RadioGroup)findViewById(R.id.Sex);
                 int sexid = sexgroup.getCheckedRadioButtonId();
                 RadioButton sex = (RadioButton)findViewById(sexid);
                 gv.setSex((String)sex.getText());
-                drunkCalc = (((.106+(.015*4.5))*(gv.getWeight()*gv.getMaleConst()))/5.14);
+                if(gv.getSex().equals("Male")) {
+                    drunkCalc = (((.08 + (.015 *gv.getTime() )) * (gv.getWeight() * gv.getMaleConst())) / 5.14);
+                } else {
+                    drunkCalc = (((.08 + (.015 *gv.getTime() )) * (gv.getWeight() * gv.getFemaleConst())) / 5.14);
+                }
                 startBAC();
             }
         });

@@ -8,7 +8,7 @@ import android.app.Application;
 
 public class GlobalVars extends Application {
     private Integer weight;
-    private Integer height;
+    private Integer time;
     private String MaleFemale;
     private double MaleConst = 0.73;
     private double FemaleConst = 0.66;
@@ -16,8 +16,8 @@ public class GlobalVars extends Application {
     public Integer getWeight(){
         return weight;
     }
-    public Integer getHeight(){
-        return height;
+    public Integer getTime(){
+        return time;
     }
     public String getSex(){
         return MaleFemale;
@@ -31,8 +31,8 @@ public class GlobalVars extends Application {
     public void setWeight(Integer newWeight){
         weight=newWeight;
     }
-    public void setHeight(Integer newHeight){
-        height=newHeight;
+    public void setTime(Integer newTime){
+        time=newTime;
     }
     public void setSex(String newSex){
         MaleFemale=newSex;
