@@ -13,4 +13,6 @@
     <string name="title_activity_functions">Functions</string>
     <string name="section_format">Hello World from section: %1$d</string>
     <string name="title_activity_am_idrunk_yet">AmIDrunkYet</string>
+    <string name="timer">Time</string>
+    <string name="title_activity_am_idrunk_yet_improved">AmIDrunkYetImproved</string>
 </resources>

@@ -41,7 +41,7 @@ public class AmIDrunkYet extends AppCompatActivity {
     private ViewPager mViewPager;
 
     @RequiresApi(api = Build.VERSION_CODES.N)
-    GlobalVars gv = (GlobalVars) getApplicationContext();
+
     @TargetApi(Build.VERSION_CODES.N)
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,7 +56,7 @@ public class AmIDrunkYet extends AppCompatActivity {
         // Set up the ViewPager with the sections adapter.
         mViewPager = (ViewPager) findViewById(R.id.container);
         mViewPager.setAdapter(mSectionsPagerAdapter);
-
+        final GlobalVars gv = (GlobalVars) getApplicationContext();
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -65,7 +65,7 @@ public class AmIDrunkYet extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
-        final TextView timeText = (TextView) findViewById(R.id.textView10);
+        final TextView timeText = (TextView) findViewById(R.id.timeLeft);
 
         CountDownTimer timer = new CountDownTimer((long)gv.getTime()*3600000,1) {
             @Override
@@ -81,7 +81,7 @@ public class AmIDrunkYet extends AppCompatActivity {
 
             }
         };
-        timeText.setText(String.valueOf(gv.getTime()*3600000));
+        timeText.setText(gv.getTime()*3600000);
         timer.start();
 
 

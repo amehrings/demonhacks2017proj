@@ -43,7 +43,7 @@ public class BAC extends AppCompatActivity {
 
     public void startAIDY() {
         Intent intent;
-        intent = new Intent(this, AmIDrunkYet.class);
+        intent = new Intent(this, AmIDrunkYetImproved.class);
         startActivity(intent);
     }
 
