@@ -26,8 +26,8 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 EditText weightText = (EditText) findViewById(R.id.Weight);
                 Integer x = Integer.valueOf(String.valueOf(weightText.getText()));
-                EditText heightText = (EditText) findViewById(R.id.Weight);
-                Integer y = Integer.valueOf(String.valueOf(weightText.getText()));
+                EditText heightText = (EditText) findViewById(R.id.Height);
+                Integer y = Integer.valueOf(String.valueOf(heightText.getText()));
 
             }
         });
