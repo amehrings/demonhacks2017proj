@@ -1,6 +1,8 @@
 package com.example.sam.safedrinkingapp;
 
+import android.annotation.TargetApi;
 import android.os.Build;
+import android.os.CountDownTimer;
 import android.support.annotation.RequiresApi;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -39,7 +41,8 @@ public class AmIDrunkYet extends AppCompatActivity {
     private ViewPager mViewPager;
 
     @RequiresApi(api = Build.VERSION_CODES.N)
-    @Override
+    GlobalVars gv = (GlobalVars) getApplicationContext();
+    @TargetApi(Build.VERSION_CODES.N)
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_am_idrunk_yet);
@@ -62,15 +65,26 @@ public class AmIDrunkYet extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+        final TextView timeText = (TextView) findViewById(R.id.textView10);
 
-    }
+        CountDownTimer timer = new CountDownTimer((long)gv.getTime()*3600000,1) {
+            @Override
+            public void onTick(long l) {
+                if(l%360000==0){
 
-    @RequiresApi(api = Build.VERSION_CODES.N)
-    public void onResume() {
-        super.onResume();
-        Chronometer timer = (Chronometer) findViewById(R.id.chronometer2);
-        timer.setBase(0);
-        timer.setCountDown(true);
+                }
+                timeText.setText(String.valueOf(l));
+            }
+
+            @Override
+            public void onFinish() {
+
+            }
+        };
+        timeText.setText(String.valueOf(gv.getTime()*3600000));
+        timer.start();
+
+
     }
 
 
