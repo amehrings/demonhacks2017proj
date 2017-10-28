@@ -6,4 +6,5 @@
     <string name="sex">Sex</string>
     <string name="female">Female</string>
     <string name="male">Male</string>
+    <string name="submit">Submit</string>
 </resources>
