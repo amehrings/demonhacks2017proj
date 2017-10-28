@@ -1,5 +1,6 @@
 package com.example.sam.safedrinkingapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -9,6 +10,8 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -28,11 +31,20 @@ public class MainActivity extends AppCompatActivity {
                 Integer x = Integer.valueOf(String.valueOf(weightText.getText()));
                 EditText heightText = (EditText) findViewById(R.id.Height);
                 Integer y = Integer.valueOf(String.valueOf(heightText.getText()));
+                RadioGroup sexgroup = (RadioGroup)findViewById(R.id.Sex);
+                int sexid = sexgroup.getCheckedRadioButtonId();
+                RadioButton sex = (RadioButton)findViewById(sexid);
+                String MaleFemale = (String) sex.getText();
+                startBAC();
 
             }
         });
     }
-
+    public void startBAC() {
+        Intent intent;
+        intent = new Intent(this, BAC.class);
+        startActivity(intent);
+    }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
