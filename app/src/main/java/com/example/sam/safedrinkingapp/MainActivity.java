@@ -2,6 +2,7 @@ package com.example.sam.safedrinkingapp;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -27,14 +28,15 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View view) {
+                final GlobalVars gv = (GlobalVars) getApplicationContext();
                 EditText weightText = (EditText) findViewById(R.id.Weight);
-                Integer x = Integer.valueOf(String.valueOf(weightText.getText()));
+                gv.setWeight(Integer.valueOf(String.valueOf(weightText.getText())));
                 EditText heightText = (EditText) findViewById(R.id.Height);
-                Integer y = Integer.valueOf(String.valueOf(heightText.getText()));
+                gv.setHeight(Integer.valueOf(String.valueOf(heightText.getText())));
                 RadioGroup sexgroup = (RadioGroup)findViewById(R.id.Sex);
                 int sexid = sexgroup.getCheckedRadioButtonId();
                 RadioButton sex = (RadioButton)findViewById(sexid);
-                String MaleFemale = (String) sex.getText();
+                gv.setSex((String)sex.getText());
                 startBAC();
 
             }
