@@ -17,6 +17,11 @@ import android.widget.NumberPicker;
 
 public class MainActivity extends AppCompatActivity {
     public static double drunkCalc = 0;
+    public static double hardLiquorShot = 0;
+    public static double beer = 0;
+    public static double wine = 0;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +49,13 @@ public class MainActivity extends AppCompatActivity {
                 } else {
                     drunkCalc = (((.08 + (.015 *gv.getTime() )) * (gv.getWeight() * gv.getFemaleConst())) / 5.14);
                 }
+
+
+                hardLiquorShot = drunkCalc/(.40*1.25);
+                beer = drunkCalc/(.05*12);
+                wine = drunkCalc/(.12*25.4);
+
+
                 startBAC();
             }
         });
@@ -55,6 +67,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+
     public void startBAC() {
         Intent intent;
         intent = new Intent(this, BAC.class);

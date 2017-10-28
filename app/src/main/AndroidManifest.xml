@@ -23,7 +23,7 @@
         <activity
             android:name=".BAC"
             android:label="@string/title_activity_bac"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>
