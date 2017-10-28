@@ -13,8 +13,10 @@ import android.view.MenuItem;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.NumberPicker;
 
 public class MainActivity extends AppCompatActivity {
+    public static double drunkCalc = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,22 +39,29 @@ public class MainActivity extends AppCompatActivity {
                 int sexid = sexgroup.getCheckedRadioButtonId();
                 RadioButton sex = (RadioButton)findViewById(sexid);
                 gv.setSex((String)sex.getText());
+                drunkCalc = (((.106+(.015*4.5))*(gv.getWeight()*gv.getMaleConst()))/5.14);
                 startBAC();
-
             }
         });
+
+        NumberPicker numberPicker = (NumberPicker) findViewById(R.id.numberPicker);
+        numberPicker.setMinValue(0);
+        numberPicker.setMaxValue(24);
+        numberPicker.setWrapSelectorWheel(false);
+
+
     }
     public void startBAC() {
         Intent intent;
         intent = new Intent(this, BAC.class);
         startActivity(intent);
     }
-    @Override
+    /*@Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
-    }
+    }*/
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

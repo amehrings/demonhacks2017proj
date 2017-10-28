@@ -10,8 +10,8 @@ public class GlobalVars extends Application {
     private Integer weight;
     private Integer height;
     private String MaleFemale;
-    private double MaleConst = 0.68;
-    private double FemaleConst = 0.55;
+    private double MaleConst = 0.73;
+    private double FemaleConst = 0.66;
 
     public Integer getWeight(){
         return weight;
@@ -37,4 +37,12 @@ public class GlobalVars extends Application {
     public void setSex(String newSex){
         MaleFemale=newSex;
     }
+
+    //private double drunkCalc = ((getWeight()*getWeightGrams()*100*getMaleConst()));
+    //public Double getDrunkCalc() { return drunkCalc; }
+    /*public void determineSex(){
+        if (){
+
+        }
+    }*/
 }

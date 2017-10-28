@@ -8,4 +8,6 @@
     <string name="male">Male</string>
     <string name="submit">Submit</string>
     <string name="title_activity_bac">BAC</string>
+    <string name="time">How Many Hours Will You Be Out?</string>
+    <string name="BAC">BAC</string>
 </resources>
