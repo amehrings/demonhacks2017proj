@@ -9,18 +9,22 @@
 
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.example.sam.safedrinkingapp.MainActivity"
+    tools:layout_editor_absoluteY="81dp"
     tools:showIn="@layout/activity_main">
 
     <EditText
         android:id="@+id/Weight"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="52dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="76dp"
+        android:backgroundTint="@color/myWhite"
         android:ems="10"
         android:inputType="number"
-        android:backgroundTint="@color/myWhite"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -28,12 +32,15 @@
         android:id="@+id/Height"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="100dp"
+        android:backgroundTint="@color/myWhite"
         android:ems="10"
         android:inputType="number"
-        android:backgroundTint="@color/myWhite"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Weight" />
 
@@ -42,34 +49,42 @@
         android:layout_width="wrap_content"
         android:layout_height="20dp"
         android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
         android:text="@string/weight"
         android:textColor="@color/myWhite"
+        android:gravity="center"
         app:layout_constraintBottom_toTopOf="@+id/Weight"
-        app:layout_constraintStart_toStartOf="@+id/Weight" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginStart="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
         android:text="@string/height"
         android:textColor="@color/myWhite"
         app:layout_constraintBottom_toTopOf="@+id/Height"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginStart="16dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
         android:text="@string/sex"
         android:textColor="@color/myWhite"
+        android:gravity="center"
         app:layout_constraintBottom_toTopOf="@+id/Sex"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginLeft="16dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <android.support.constraint.Guideline
         android:id="@+id/guideline2"
@@ -80,35 +95,37 @@
 
     <RadioGroup
         android:id="@+id/Sex"
-        android:layout_width="368dp"
+        android:layout_width="168dp"
         android:layout_height="89dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="32dp"
-        android:orientation="horizontal"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="92dp"
         android:backgroundTint="@color/myWhite"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.545"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Height">
 
         <RadioButton
             android:id="@+id/SexMale"
-            android:layout_width="94dp"
+            android:layout_width="84dp"
             android:layout_height="wrap_content"
             android:baselineAligned="false"
-            android:text="@string/male"
             android:buttonTint="@color/myWhite"
+            android:text="@string/male"
             android:textColor="@color/myWhite"
             tools:layout_editor_absoluteX="59dp"
             tools:layout_editor_absoluteY="311dp" />
 
         <RadioButton
             android:id="@+id/SexFemale"
-            android:layout_width="94dp"
+            android:layout_width="110dp"
             android:layout_height="wrap_content"
             android:baselineAligned="false"
-            android:text="@string/female"
             android:buttonTint="@color/myWhite"
+            android:text="@string/female"
             android:textColor="@color/myWhite"
-
             tools:layout_editor_absoluteX="171dp"
             tools:layout_editor_absoluteY="311dp" />
 
