@@ -22,7 +22,8 @@
         android:inputType="number"
         android:backgroundTint="@color/myWhite"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:targetApi="lollipop" />
 
     <EditText
         android:id="@+id/Height"
@@ -35,7 +36,8 @@
         android:inputType="number"
         android:backgroundTint="@color/myWhite"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Weight" />
+        app:layout_constraintTop_toBottomOf="@+id/Weight"
+        tools:targetApi="lollipop" />
 
     <TextView
         android:id="@+id/textView"
@@ -90,7 +92,8 @@
         android:orientation="horizontal"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Height"
-        android:layout_marginLeft="8dp">
+        android:layout_marginLeft="8dp"
+        tools:targetApi="lollipop">
 
         <RadioButton
             android:id="@+id/SexMale"
@@ -101,7 +104,8 @@
             android:text="@string/male"
             android:textColor="@color/myWhite"
             tools:layout_editor_absoluteX="59dp"
-            tools:layout_editor_absoluteY="311dp" />
+            tools:layout_editor_absoluteY="311dp"
+            tools:targetApi="lollipop" />
 
         <RadioButton
             android:id="@+id/SexFemale"
