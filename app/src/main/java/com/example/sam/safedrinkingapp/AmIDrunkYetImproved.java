@@ -5,35 +5,27 @@ import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
-import android.media.RingtoneManager;
-import android.net.Uri;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
-import android.support.v4.app.NotificationCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.TextView;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.TimeZone;
-
 public class AmIDrunkYetImproved extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
+        final NotificationManager nm = (NotificationManager)getSystemService(Context.NOTIFICATION_SERVICE);
+        final Notification notify = new Notification(android.R.drawable.stat_notify_more,"You can drink again now",System.currentTimeMillis());
+        final PendingIntent pending = PendingIntent.getActivity(getApplicationContext(), 0, new Intent(),0);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_am_idrunk_yet_improved);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         final GlobalVars gv = (GlobalVars) getApplicationContext();
-        final SimpleDateFormat formatter = new SimpleDateFormat("HH:mm:ss");
-        formatter.setTimeZone(TimeZone.getTimeZone("GMT"));
-        final Date[] date = new Date[1];
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -47,11 +39,11 @@ public class AmIDrunkYetImproved extends AppCompatActivity {
         CountDownTimer timer = new CountDownTimer((long)gv.getTime()*3600000,1) {
             @Override
             public void onTick(long l) {
-                if(l%3600000==0){
-                    notifyMe();
+                if(l%360000==0){
+                    //notify.setLatestEventInfo();
+                    nm.notify(0, notify);
                 }
-                date[0] = new Date(l);
-                timeText.setText(formatter.format(l));
+                timeText.setText(String.valueOf(l));
             }
 
             @Override
@@ -59,22 +51,8 @@ public class AmIDrunkYetImproved extends AppCompatActivity {
 
             }
         };
-        date[0] = new Date(gv.getTime()*3600000);
-        timeText.setText(formatter.format(date[0]));
+        timeText.setText(String.valueOf(gv.getTime()*3600000));
         timer.start();
-    }
-    public void notifyMe(){
-        final PendingIntent pending = PendingIntent.getActivity(getApplicationContext(), 0, new Intent(),0);
-        Uri sound = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
-        NotificationCompat.Builder nb = new NotificationCompat.Builder(this);
-        nb.setSmallIcon(R.drawable.ic_launcher_background);
-        nb.setSound(sound);
-        nb.setContentTitle("Drink Up!");
-        nb.setContentText("You can drink now");
-        nb.setContentIntent(pending);
-        NotificationManager nm = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
-        nm.notify(0,nb.build());
-
     }
 
 }
