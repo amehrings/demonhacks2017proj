@@ -15,4 +15,11 @@
     <string name="title_activity_am_idrunk_yet">AmIDrunkYet</string>
     <string name="timer">Time</string>
     <string name="title_activity_am_idrunk_yet_improved">AmIDrunkYetImproved</string>
+    <string name="title_activity_main2">Main2Activity</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
+    <string name="tab_text_3">Tab 3</string>
+    <string name="drinks">Drinks</string>
+    <string name="bac">B.A.C</string>
+    <string name="uber"><![CDATA[Timer & Uber]]></string>
 </resources>

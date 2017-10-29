@@ -70,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void startBAC() {
         Intent intent;
-        intent = new Intent(this, BAC.class);
+        intent = new Intent(this, Main2Activity.class);
         startActivity(intent);
     }
     /*@Override
