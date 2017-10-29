@@ -17,7 +17,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="84dp"
         android:gravity="center"
-        android:text="@string/BAC"
+        android:text="@string/AC"
         android:textColor="@color/myWhite"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
