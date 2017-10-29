@@ -1,4 +1,9 @@
 <resources>
+    <string-array name="alcohol">
+        <item>Beer(s)</item>
+        <item>Spirit(s)</item>
+        <item>Bottle(s) of Wine</item>
+    </string-array>
     <string name="app_name">SafeDrinkingApp</string>
     <string name="action_settings">Settings</string>
     <string name="weight">Weight</string>
