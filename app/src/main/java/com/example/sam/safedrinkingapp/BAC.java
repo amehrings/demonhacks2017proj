@@ -9,6 +9,12 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.TextView;
 
+import com.uber.sdk.android.core.UberSdk;
+import com.uber.sdk.core.auth.Scope;
+import com.uber.sdk.rides.client.SessionConfiguration;
+
+import java.util.Arrays;
+
 public class BAC extends AppCompatActivity {
 
 
@@ -19,13 +25,14 @@ public class BAC extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-                                   @Override
-                                   public void onClick(View view) {
-                                       startAIDY();
-                                   }
-                               });
+        SessionConfiguration config = new SessionConfiguration.Builder()
+                .setClientId("J9uWdtBnc9X0o7FAD7RpMhhiMIinK4aF")
+                .setRedirectUri("http://localhost:8888/callback")
+                .setEnvironment(SessionConfiguration.Environment.SANDBOX)
+                .setScopes(Arrays.asList(Scope.PROFILE, Scope.REQUEST))
+                .build();
+
+        UberSdk.initialize(config);
 
             TextView textView6 = (TextView)findViewById(R.id.textView6);
         textView6.setText(String.format("%.2f", MainActivity.drunkCalc));
