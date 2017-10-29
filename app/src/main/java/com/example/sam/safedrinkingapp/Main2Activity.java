@@ -48,21 +48,12 @@ public class Main2Activity extends AppCompatActivity {
         mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
         // Set up the ViewPager with the sections adapter.
         mViewPager = (ViewPager) findViewById(R.id.container);
-        mViewPager.setAdapter(mSectionsPagerAdapter);
+        SetupViewPager(mViewPager);
 
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
 
         mViewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
         tabLayout.addOnTabSelectedListener(new TabLayout.ViewPagerOnTabSelectedListener(mViewPager));
-
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
 
     }
 
@@ -146,5 +137,12 @@ public class Main2Activity extends AppCompatActivity {
             // Show 3 total pages.
             return 3;
         }
+    }
+    public void SetupViewPager(ViewPager viewPager){
+        TabsPageAdapter tpa = new TabsPageAdapter(getSupportFragmentManager());
+        tpa.addFragment(new DrinksFragment(),"Drinks");
+        tpa.addFragment(new BACFragment(),"B.A.C");
+        tpa.addFragment(new TimerUberFragment(),"Timer & Uber");
+        viewPager.setAdapter(tpa);
     }
 }
