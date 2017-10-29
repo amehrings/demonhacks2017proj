@@ -25,14 +25,6 @@ public class BAC extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        SessionConfiguration config = new SessionConfiguration.Builder()
-                .setClientId("J9uWdtBnc9X0o7FAD7RpMhhiMIinK4aF")
-                .setRedirectUri("http://localhost:8888/callback")
-                .setEnvironment(SessionConfiguration.Environment.SANDBOX)
-                .setScopes(Arrays.asList(Scope.PROFILE, Scope.REQUEST))
-                .build();
-
-        UberSdk.initialize(config);
 
             TextView textView6 = (TextView)findViewById(R.id.textView6);
         textView6.setText(String.format("%.2f", MainActivity.drunkCalc));
